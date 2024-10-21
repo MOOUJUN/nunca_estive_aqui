@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:></title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #000;
+            color: #ff0000; /* Vermelho intenso */
+            font-family: 'Courier New', monospace; /* Fonte mais sombria */
+            overflow: hidden;
+            position: relative; /* Para posicionamento absoluto */
+        }
+
+        .message {
+            font-size: 2.5em;
+            animation: flicker 1s infinite;
+        }
+
+        .image {
+            width: 200px; /* Aumenta a imagem */
+            height: 200px;
+            border-radius: 50%;
+            animation: shake 0.5s infinite alternate; /* Efeito de tremor */
+            margin: 20px;
+        }
+
+        .big-message {
+            font-size: 1.5em;
+            animation: fade 2s infinite;
+            margin-top: 20px;
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px; /* Espaço do fundo */
+            font-size: 1.2em;
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000; /* Sombra para o texto */
+        }
+
+        @keyframes flicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes shake {
+            0% { transform: translate(0); }
+            100% { transform: translate(-5px, 5px); }
+        }
+
+        @keyframes fade {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="message">Ei, você mesmo!</div>
+    <img class="image" src="https://pbs.twimg.com/profile_images/564429257850761216/jZ51D5Zr_400x400.jpeg" alt="Imagem Assustadora">
+    <div class="big-message">Não perca seu tempo nos denunciando, é melhor. Vamos te explicar melhor.</div>
+    <div class="big-message">1 - Estamos utilizando mais de 30 máquinas virtuais.</div>
+    <div class="big-message">2 - Utilizamos contas laranja para receber PIX.</div>
+    <div class="big-message">3 - Temos mais de 100 VPNs instaladas.</div>
+    <div class="big-message">4 - Temos matadores de aluguéis prontos para a ação.</div>
+    <div class="big-message">5 - Temos acesso a todos os bancos de dados/informações da polícia do estado de Recife, Brasil.</div>
+    <div class="big-message">6 - Garantimos a morte de toda a sua família caso encontremos qualquer denúncia em seu nome, CPF, endereço ou quaisquer dados.</div>
+    <div class="big-message">7 - Isso não é um aviso, é uma ameaça</div>
+    <div class="big-message">7 - Valor perdido R$ 4,800,</div>
+
+    <div class="footer">© 2024 nunca_estive_aqui</div>
+
+    <script>
+        const messages = [
+            "Atenção!",
+            "Sua",
+            "Familia",
+            "Está!",
+            "Em risco",
+            "Atenção!",
+            "Atenção!"
+        ];
+
+        const messageDiv = document.querySelector('.message');
+        let index = 0;
+
+        setInterval(() => {
+            messageDiv.textContent = messages[index];
+            index = (index + 1) % messages.length;
+        }, 2000);
+    </script>
+
+</body>
+</html>
